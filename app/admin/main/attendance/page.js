@@ -53,7 +53,7 @@ const Page = () => {
     auth()
     fetchUsers();
     fetchAttendance();
-  }, []);
+  }, [auth]);
 
   // Format the date as needed
   function fetchAttendance() {
@@ -118,7 +118,8 @@ const Page = () => {
   useEffect(() => {
     processAttendance();
     setLoading(false);
-  }, [Attendance, Cards]);
+  }, [Attendance, Cards, processAttendance]);  // Add 'processAttendance' to the dependency array
+  
 
 
 
