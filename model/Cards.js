@@ -8,6 +8,7 @@ const CardSchema = new mongoose.Schema(
     class: { type: String },
     contact: { type: String },
     email: { type: String },
+    password: { type: String },
   },
   { collection: "all-Cards" },
   { timestamps: true }

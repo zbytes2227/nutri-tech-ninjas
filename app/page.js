@@ -122,8 +122,7 @@ export default function Home() {
           Bharat
         </p>
         <div className="mt-10  flex justify-center items-center">
-        <Image height={500} width={500} alt=";lknjb" className=" shadow shadow-xl rounded-lg" src={"/images/image.jpeg"} />
-          </div>
+         </div>
       </div>
       </>
   );

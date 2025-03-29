@@ -19,6 +19,8 @@ const Page = () => {
       router.push("/login");
     }
   };
+
+
   const [Cards, setCards] = useState([]);
   const [Attendance, setAttendance] = useState([])
   const [searchQuery, setSearchQuery] = useState("");
@@ -270,6 +272,9 @@ const Page = () => {
                     Date
                   </th>
                   <th scope="col" className="px-6 py-3">
+                    Meal
+                  </th>
+                  <th scope="col" className="px-6 py-3">
                     Login
                   </th>{" "}
                   <th scope="col" className="px-6 py-3">
@@ -297,6 +302,22 @@ const Page = () => {
                       {new Date(card.login).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4">
+  {(() => {
+    const hours = new Date(card.login).getHours(); // Get the hour of the day
+    if (hours >= 6 && hours < 11) {
+      return 'Breakfast'; // Between 6:00 AM and 10:59 AM
+    } else if (hours >= 11 && hours < 16) {
+      return 'Lunch'; // Between 11:00 AM and 3:59 PM
+    } else if (hours >= 16 && hours < 21) {
+      return 'Dinner'; // Between 4:00 PM and 8:59 PM
+    } else {
+      return 'Late Night'; // For hours between 9:00 PM and 5:59 AM
+    }
+  })()}
+</td>
+
+
+<td className="px-6 py-4">
                       {new Date(card.login).toLocaleTimeString()}
                     </td>
                     <td className="px-6 py-4">
